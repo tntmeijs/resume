@@ -11,6 +11,7 @@ right=0.5in]{geometry}              % specify right page margin
 \usepackage{enumitem}               % enable lists for bullet points: itemize and \item
 \usepackage[hidelinks]{hyperref}    % format hyperlinks
 \usepackage{titlesec}               % enable section title customization
+\usepackage[official]{eurosym}      % enable euro symbol
 \raggedright                        % disable text justification
 \pagestyle{empty}                   % disable page numbering
 
@@ -36,64 +37,52 @@ right=0.5in]{geometry}              % specify right page margin
 % contact information
 \centerline{\href{mailto:tntmeijs@gmail.com}{tntmeijs@gmail.com} | \href{https://www.linkedin.com/in/tntmeijs/}{linkedin.com/in/tntmeijs} | \href{https://github.com/tntmeijs}{github.com/tntmeijs}}
 
+\section*{Impact summary}
+Backend and distributed systems engineer with 5+ years designing and delivering high-scale, event-driven platforms in finance and gaming.
+Proven ability to architect low-latency, fault-tolerant systems on AWS for multi-million euro transaction workflows.
+Mentored engineers to promotion.
+Achieved rapid career progression with 3 promotions from Analyst to Specialist Lead at Deloitte due to technical excellence and leadership impact.
+
 % experience section
 \section*{Experience}
 \textbf{\href{https://www.deloitte.com/nl/nl.html}{Deloitte -- Amsterdam, The Netherlands}\hfill September 2020 -- Present} \\
-\textit{Specialist lead / manager} \\
+\textit{Specialist lead / manager (2025 -- present)} \\
 \vspace{-9pt}
 \begin{itemize}
-  \item Built a neobank on AWS with Go, Lambda, and DynamoDB within 12 months that uses a serverless architecture to achieve low average operational costs and support high burst traffic. It also eliminated the need for an expensive Kubernetes cluster with JVM containers.
-  \item Implemented a monitoring stack on CloudWatch to track Step Function performance and SQS queue loads.
-  \item Designed event-driven serverless architecture using Lambda, EventBridge, and SQS.
-  \item Coached and mentored junior engineers, guiding them from being on a performance improvement plan to promotion to the next level within two years.
+  \item Built a \textbf{production neobank} on AWS (Go, Lambda, DynamoDB) in 12 months, replacing costly Java/Kubernetes cluster (12 microservices, Kafka, RDS) with \textbf{serverless architecture} supporting high-burst traffic.
+  \item Created a \textbf{CloudWatch observability stack} for Step Functions and SQS, improving incident detection and reducing downtime.
+  \item Eliminated \textbf{KYC race conditions} (1\% of users) via optimistic concurrency and self-healing mechanism.
+  \item Mentored junior engineer from performance improvement plan to promotion in less than 2 years.
 \end{itemize}
 
-\textit{Senior specialist / senior consultant} \\
+\textit{Senior specialist / senior consultant (2022 -- 2025)} \\
 \vspace{-9pt}
 \begin{itemize}
-  \item Led an 8-person engineering team building an event-driven load origination platform, integrating with a dozen external APIs and services, resulting in successful project delivery and 3 team member promotions.
-  \item Built a corporate loan origination platform processing 50M+ euros in loans annually, reducing approval time from multiple weeks to days.
-  \item Decomposed a distributed monolith application into a dozen domain-specific microservices, improving our team's velocity to deliver new tickets.
+  \item Led \textbf{8-person engineering team} delivering a distributed loan origination platform (12+ API integrations), which directly contributed to 3 promotions.
+  \item Designed an \textbf{event-driven corporate loan origination platform} on AWS (Java, Kafka, DocumentDB) under strict GDPR compliance, processing \EUR{50M+} annually, cutting approval time from weeks to days.
+  \item Decomposed distributed monolith into \textbf{domain-specific microservices}, increasing delivery speed and reducing deployment risks.
 \end{itemize}
 
-\textit{Specialist / consultant} \\
+\textit{Specialist / consultant (2021 -- 2022)} \\
 \vspace{-9pt}
 \begin{itemize}
-  \item Built an event-driven retail loan origination platform for a large Dutch bank using Java and AWS, generating 7.5M+ euros in loans each year.
-  \item Designed and built a custom debugging tool to resolve bugs in event-driven systems using Kafka, significantly speeding up incident resolution time and improved developer experience.
-  \item Built an ETL pipeline processing 100k+ JSON Kafka events per hour, all transformed into SQL table entries, and uploaded to a datalake using FTP for audit purposes.
+  \item Built a \textbf{retail loan origination system} on AWS (Java, Kafka, DocumentDB) generating \EUR{7.5M+} in loans annually shortly after launch.
+  \item Developed a custom \textbf{Kafka debugger} for distributed systems, cutting bug resolution time by 50\%.
 \end{itemize}
 
-\textit{Analyst} \\
+\textit{Analyst (2020 -- 2021)} \\
 \vspace{-9pt}
 \begin{itemize}
-  \item Contributed to a digital loan origination solution for a large Dutch bank that reduces the time it takes to apply for a loan from 6 weeks to 15 minutes by automating their offline processes.
+  \item Automated retail loan origination for a major Dutch bank, reduced approval time from 6 weeks to 15 minutes.
 \end{itemize}
 
 \textbf{\href{https://www.sumo-digital.com/}{Sumo Digital -- Sheffield, United Kingdom}\hfill September 2019 -- August 2020} \\
 \textit{Junior software engineer}\\
 \vspace{-9pt}
 \begin{itemize}
-  \item Built a real-time testing and video streaming dashboard processing over 10.000 test results daily using React, Node.js, and Websockets, reducing the QA feedback cycle from hours to minutes.
-  \item Optimised PlayStation 5 resource packing algorithms in C++ by more efficiently allocating data chunks next to each other, reducing the game's overall size by 25\%, allowing more data to be stored on Blu-ray discs.
-  \item Developed a cross-platform video recording application for PlayStation 4/5 and PC with minimal overhead by asynchronously capturing the GPU's frame buffer.
-\end{itemize}
-
-\textit{Placement Programmer} \\
-\vspace{-9pt}
-\begin{itemize}
-  \item Designed and built a custom, cross-platform, testing framework for PC, PlayStation 4, and PlayStation 5 using C\texttt{++} for PlayStation 5 launch title "\href{https://www.playstation.com/en-us/games/sackboy-a-big-adventure/}{Sackboy: A Big Adventure}".
-  \item Built a custom performance profiler for Unreal Engine 4 games with minimal overhead on the game's processes by intelligently batching operations.
-\end{itemize}
-
-\vspace{-9pt}
-
-\section*{Notable technical challenges}
-\begin{itemize}
-  \item Eliminated race conditions affecting roughly 1\% of users in our KYC processes by implementing optimistic concurrency with self-healing, eliminating users stuck in limbo states.
-  \item Introduced a custom-built debugger for distributed event-driven systems, improving developer debugging velocity by 50\%. Bugs that would take two hours to resolve could now be resolved within the hour.
-  \item Rearchitectured core parts of our application to use transactional writes and centrallised orchestration instead of tightly-coupled peer-to-peer orchestration patterns. This solved nearly all eventual consistency bugs.
-  \item Asynchronously captured the GPU's frame buffer with minimal impact on the running processes. The game's logic and rendering took well over 14 milliseconds per frame, leaving less than 3 milliseconds to capture the frame buffer and (asynchronously) start H.264 encoding on NVIDIA's NVENC cores.
+  \item Built a \textbf{real-time QA dashboard} (React, Node.js, WebSockets) processing 10k+ test results per day, cutting the QA feedback cycle from hours down to minutes.
+  \item Optimised \textbf{PlayStation 5 resource packing} in C++, reducing game size \textgreater25\% for Blu-ray constraints.
+  \item Developed \textbf{GPU frame buffer capture} (\textless3ms overhead) for H.264 encoding (NVIDIA NVENC).
 \end{itemize}
 
 \vspace{-9pt}
@@ -101,18 +90,18 @@ right=0.5in]{geometry}              % specify right page margin
 % skills section
 \section*{Skills}
 \begin{tabular}{@{}l l@{}}
-\textbf{Backend technologies} & Go, Java, Spring Boot, Node.js \\
-\textbf{Cloud and infrastructure} & AWS (Lambda, Step Functions), Docker, Kubernetes, CDK, Terraform \\
-\textbf{Data and messaging} & Kafka, DynamoDB, MongoDB, S3, SQS, EventBridge \\
+\textbf{Languages and backend} & Go, Java, C++, Spring Boot, JavaScript (Node.js, React) \\
+\textbf{Cloud and infrastructure} & AWS (Lambda, Step Functions), Docker, CDK, Terraform \\
+\textbf{Data and messaging} & Kafka, DynamoDB, MongoDB, SQS, EventBridge \\
+\textbf{Architecture} & Serverless, microservices, event-driven, distributed systems \\
 \textbf{Monitoring and observability} & CloudWatch, DataDog \\
-\textbf{Architecture} & Serverless, microservices, event-driven design, domain-driven design \\
-\textbf{Compliancy} & PII data masking, GDPR-compliant architecture, audit trails \\
+\textbf{Compliance} & PII data masking, GDPR-compliant architecture, audit trails \\
 \end{tabular}
 
 \vspace{-9pt}
 
 % education section
 \section*{Education}
-\textbf{\href{https://www.buas.nl/en/programmes/creative-media-and-game-technologies/programming}{Breda University of Applied Sciences}} -- BSc Creative Media and Game Technologies\hfill 2016 -- 2020
+\textbf{\href{https://www.buas.nl/en/programmes/creative-media-and-game-technologies/programming}{Breda University of Applied Sciences}} -- BSc Creative Media and Game Technologies (cum laude)\hfill 2016 -- 2020
 
 \end{document}
