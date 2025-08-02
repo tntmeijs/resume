@@ -42,56 +42,72 @@ right=0.5in]{geometry}              % specify right page margin
 \textit{Specialist lead / manager} \\
 \vspace{-9pt}
 \begin{itemize}
-  \item Built and designed a serverless neobank on AWS with Golang for one of the largest banks in The Netherlands.
-  \item Introduced metrics and observability to make our incident management as efficient as possible.
-  \item Became a subject matter expert for event-driven microservice-based applications.
-  \item Coached and mentored junior colleagues to help them shape their careers by regularly scheduling 1:1 sessions, making room for them to learn skills, and by sharing advice on how they could achieve their goals.
+  \item Built a neobank on AWS with Go, Lambda, and DynamoDB within 12 months that uses a serverless architecture to achieve low average operational costs and support high burst traffic. It also eliminated the need for an expensive Kubernetes cluster with JVM containers.
+  \item Implemented a monitoring stack on CloudWatch to track Step Function performance and SQS queue loads.
+  \item Designed event-driven serverless architecture using Lambda, EventBridge, and SQS.
+  \item Coached and mentored junior engineers, guiding them from being on a performance improvement plan to promotion to the next level within two years.
 \end{itemize}
 
 \textit{Senior specialist / senior consultant} \\
 \vspace{-9pt}
 \begin{itemize}
-  \item Lead the development of Deloitte Netherlands' cloud native (Java / AWS) digital loan origination system for \href{https://www2.deloitte.com/us/en/pages/consulting/solutions/converge/modern-banking-suite.html}{Converge Banking Suite} by defining capabilities, designing new features, and improving the customer journey.
-  \item Modernised the architecture of a large distributed monolith by clearly separating domains, merging services, enforcing consistent standards, and (re)defining the datamodel.
-  \item Lead a cross-functional, international, team of engineers by maintaining a clear technical vision and ensuring that everyone is aligned on the direction the project is headed in.
+  \item Led an 8-person engineering team building an event-driven load origination platform, integrating with a dozen external APIs and services, resulting in successful project delivery and 3 team member promotions.
+  \item Built a corporate loan origination platform processing 50M+ euros in loans annually, reducing approval time from multiple weeks to days.
+  \item Decomposed a distributed monolith application into a dozen domain-specific microservices, improving our team's velocity to deliver new tickets.
 \end{itemize}
 
 \textit{Specialist / consultant} \\
 \vspace{-9pt}
 \begin{itemize}
-  \item Designed and built new microservices for a digital loan origination solution for a large Dutch bank by collaborating across teams and by proactively suggesting improvements.
-  \item Created a custom ETL (\textbf{E}xtract, \textbf{T}ransform, \textbf{L}oad) microservice that converts unstructured JSON Kafka events into SQL tables and uploads the data via FTP to a datalake.
+  \item Built an event-driven retail loan origination platform for a large Dutch bank using Java and AWS, generating 7.5M+ euros in loans each year.
+  \item Designed and built a custom debugging tool to resolve bugs in event-driven systems using Kafka, significantly speeding up incident resolution time and improved developer experience.
+  \item Built an ETL pipeline processing 100k+ JSON Kafka events per hour, all transformed into SQL table entries, and uploaded to a datalake using FTP for audit purposes.
 \end{itemize}
 
 \textit{Analyst} \\
 \vspace{-9pt}
 \begin{itemize}
   \item Contributed to a digital loan origination solution for a large Dutch bank that reduces the time it takes to apply for a loan from 6 weeks to 15 minutes by automating their offline processes.
-  \item Implemented new business logic in various microservices by collaborating with senior engineers on the team.
 \end{itemize}
 
 \textbf{\href{https://www.sumo-digital.com/}{Sumo Digital -- Sheffield, United Kingdom}\hfill September 2019 -- August 2020} \\
-\textit{Junior Programmer} \\
+\textit{Junior software engineer}\\
 \vspace{-9pt}
 \begin{itemize}
-  \item Sped up QA feedback cycle by building a dashboard for a custom testing framework that displays graphs, performance statistics, history, test results, and video streams using React, a NodeJS server, and Websockets.
-  \item Optimised Unreal Engine's source code to more efficiently pack a game's resources for PlayStation platforms by aligning data closer together in the final disk image.
+  \item Built a real-time testing and video streaming dashboard processing over 10.000 test results daily using React, Node.js, and Websockets, reducing the QA feedback cycle from hours to minutes.
+  \item Optimised PlayStation 5 resource packing algorithms in C++ by more efficiently allocating data chunks next to each other, reducing the game's overall size by 25\%, allowing more data to be stored on Blu-ray discs.
+  \item Developed a cross-platform video recording application for PlayStation 4/5 and PC with minimal overhead by asynchronously capturing the GPU's frame buffer.
 \end{itemize}
 
 \textit{Placement Programmer} \\
 \vspace{-9pt}
 \begin{itemize}
-  \item Improved quality of PlayStation 5 launch title "\href{https://www.playstation.com/en-us/games/sackboy-a-big-adventure/}{Sackboy: A Big Adventure}" by creating a custom cross-platform testing framework for PC, PlayStation 4, and PlayStation 5 using C\texttt{++} in Unreal Engine 4.
-  \item Reduced test result ambiguity by creating a custom GPU-accelerated automated video recorder application that allowed the QA department to see why their gameplay tests failed.
+  \item Designed and built a custom, cross-platform, testing framework for PC, PlayStation 4, and PlayStation 5 using C\texttt{++} for PlayStation 5 launch title "\href{https://www.playstation.com/en-us/games/sackboy-a-big-adventure/}{Sackboy: A Big Adventure}".
+  \item Built a custom performance profiler for Unreal Engine 4 games with minimal overhead on the game's processes by intelligently batching operations.
 \end{itemize}
 
-\vspace{-18.5pt}
+\vspace{-9pt}
+
+\section*{Notable technical challenges}
+\begin{itemize}
+  \item Eliminated race conditions affecting roughly 1\% of users in our KYC processes by implementing optimistic concurrency with self-healing, eliminating users stuck in limbo states.
+  \item Introduced a custom-built debugger for distributed event-driven systems, improving developer debugging velocity by 50\%. Bugs that would take two hours to resolve could now be resolved within the hour.
+  \item Rearchitectured core parts of our application to use transactional writes and centrallised orchestration instead of tightly-coupled peer-to-peer orchestration patterns. This solved nearly all eventual consistency bugs.
+  \item Asynchronously captured the GPU's frame buffer with minimal impact on the running processes. The game's logic and rendering took well over 14 milliseconds per frame, leaving less than 3 milliseconds to capture the frame buffer and (asynchronously) start H.264 encoding on NVIDIA's NVENC cores.
+\end{itemize}
+
+\vspace{-9pt}
 
 % skills section
 \section*{Skills}
-\textbf{Languages:} Java, C\texttt{++}, Go, JavaScript \\
-\textbf{Technologies:} Kafka, Spring Boot, AWS, React, Docker, Kubernetes \\
-\textbf{Other:} End-to-end delivery, technical leadership, requirement refinement, mentorship
+\begin{tabular}{@{}l l@{}}
+\textbf{Backend technologies} & Go, Java, Spring Boot, Node.js \\
+\textbf{Cloud and infrastructure} & AWS (Lambda, Step Functions), Docker, Kubernetes, CDK, Terraform \\
+\textbf{Data and messaging} & Kafka, DynamoDB, MongoDB, S3, SQS, EventBridge \\
+\textbf{Monitoring and observability} & CloudWatch, DataDog \\
+\textbf{Architecture} & Serverless, microservices, event-driven design, domain-driven design \\
+\textbf{Compliancy} & PII data masking, GDPR-compliant architecture, audit trails \\
+\end{tabular}
 
 \vspace{-9pt}
 
