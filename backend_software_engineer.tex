@@ -19,42 +19,26 @@ right=0.5in]{geometry}              % specify right page margin
 \input{glyphtounicode}
 \pdfgentounicode=1
 
-% format section headings: bolding, size, white space above and below
 \titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-6.5pt}]
-
-% format bullet points: size, white space above and below, white space between bullets
 \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
 \setlist[itemize]{itemsep=-2pt, leftmargin=12pt}
 
-% resume starts here
 \begin{document}
 
-% name
 \centerline{\Huge Tahar Meijs}
 
-\vspace{5pt}
-
-% contact information
 \centerline{\href{mailto:tntmeijs@gmail.com}{tntmeijs@gmail.com} | \href{https://www.linkedin.com/in/tntmeijs/}{linkedin.com/in/tntmeijs} | \href{https://github.com/tntmeijs}{github.com/tntmeijs}}
 
-\section*{Impact summary}
-Backend Java engineer with 5+ years designing high-scale, event-driven, distributed systems in finance and gaming.
-Built a complete bank within a year to compete with existing neobanks.
-Proven ability to architect low-latency, fault-tolerant systems on AWS for multi-million euro transaction workflows.
+\section*{Profile Summary}
+Backend engineer with 5+ years of experience designing distributed, scalable, high-throughput systems with Java, Go, and AWS. Proven experience building resilient event-driven services, APIs, and reliable production systems processing millions of transactions. Strong ownership mindset, effective cross-team collaboration, and mentoring experience. Seeking a role focused on distributed Java systems with high reliability, performance, and scalability.
 
-\vspace{5pt}
-
-Strong preference for working on high-impact global projects that directly improve the end-user experience.
-Achieved rapid career progression with promotions from Analyst to Specialist Lead at Deloitte due to technical excellence and leadership impact.
-
-% experience section
 \section*{Experience}
 \textbf{\href{https://www.deloitte.com/nl/nl.html}{Deloitte -- Amsterdam, The Netherlands}\hfill September 2020 -- Present} \\
 \textit{Specialist lead / manager (2025 -- present)} \\
 \vspace{-9pt}
 \begin{itemize}
   \item Launched a \textbf{neobank} on AWS (Go, Lambda, DynamoDB) in 12 months, replacing costly Java/Kubernetes cluster (12 microservices, Kafka, PostgreSQL) with \textbf{serverless architecture} supporting high-burst traffic.
-  \item Designed and implemented a \textbf{framework and developer tooling} layer that standardized validation, versioning, A/B testing, and rollback of onboarding flows across teams.
+  \item Designed bespoke \textbf{frameworks and developer tools} that standardize validation, versioning, A/B testing, and rollback of onboarding flows across teams.
   \item Created a \textbf{CloudWatch observability stack} for Step Functions and SQS, improving incident detection and reducing downtime.
   \item Eliminated \textbf{KYC race conditions} (1\% of users) via optimistic concurrency and self-healing mechanism.
   \item Built \textbf{internal debugging, tracing, and replay tooling} allowing engineers to safely reproduce production inputs and diagnose distributed failures.
@@ -72,8 +56,8 @@ Achieved rapid career progression with promotions from Analyst to Specialist Lea
 \textit{Specialist / consultant (2021 -- 2022)} \\
 \vspace{-9pt}
 \begin{itemize}
-  \item Built a \textbf{retail loan origination system} on AWS (Java, Kafka, DocumentDB) generating \EUR{7.5M+} in loans annually shortly after launch.
-  \item Developed a custom \textbf{Kafka debugger} for distributed systems, cutting bug resolution time by 50\%.
+  \item Built a retail loan origination engine (Java, Kafka) generating significant revenue post-launch and handling high-throughput event streams.
+  \item Created tooling to inspect and replay Kafka streams, cutting mean time to resolution for distributed failures.
 \end{itemize}
 
 \textit{Analyst (2020 -- 2021)} \\
@@ -82,32 +66,29 @@ Achieved rapid career progression with promotions from Analyst to Specialist Lea
   \item Automated retail loan origination for a major Dutch bank, reduced approval time from 6 weeks to 15 minutes.
 \end{itemize}
 
-\textbf{\href{https://www.sumo-digital.com/}{Sumo Digital -- Sheffield, United Kingdom}\hfill September 2019 -- August 2020} \\
-\textit{Junior software engineer}\\
-\vspace{-9pt}
+\textbf{\href{https://www.sumo-digital.com/}{Sumo Digital -- Sheffield, UK}\hfill Sept 2019 -- Aug 2020} \\
+\textit{Junior Software Engineer}
 \begin{itemize}
   \item Built an internal \textbf{QA integration testing framework} (React, Node.js, WebSockets, C++) and real-time dashboard for Unreal Engine, dramatically improving test visibility and feedback loops for QA engineers.
   \item Optimised \textbf{PlayStation 5 resource packing} in C++, reducing game size \textgreater25\% for Blu-ray constraints.
   \item Developed \textbf{GPU frame buffer capture} (\textless3ms overhead) for H.264 encoding (NVIDIA NVENC).
 \end{itemize}
 
-\vspace{-9pt}
-
-% skills section
 \section*{Skills}
 \begin{tabular}{@{}l l@{}}
-\textbf{Languages and backend} & Go, Java, C++, Spring Boot, JavaScript (Node.js, React) \\
-\textbf{Cloud and infrastructure} & AWS (Lambda, Step Functions), Docker, CDK, Terraform \\
-\textbf{Data and messaging} & Kafka, DynamoDB, MongoDB, SQS, EventBridge \\
-\textbf{Architecture} & Serverless, microservices, event-driven, distributed systems \\
-\textbf{CI/CD and testing} & TeamCity, Azure Pipelines, GitHub Actions, various testing frameworks \\
-\textbf{Monitoring and observability} & CloudWatch, DataDog \\
+\textbf{Languages} & Java (Spring Boot), Go, C++, JavaScript (Node.js, React) \\
+\textbf{Web Services} & REST API design, distributed applications, high-throughput systems \\
+\textbf{Databases} & PostgreSQL, DynamoDB, DocumentDB, schema design \\
+\textbf{Cloud \& Infrastructure} & AWS (Lambda, Step Functions), Terraform, CDK, Docker \\
+\textbf{Messaging / Streaming} & Kafka, SQS, EventBridge \\
+\textbf{Observability} & CloudWatch, DataDog; metrics, logs, trace correlation \\
+\textbf{Architecture} & Microservices, event-driven, serverless, fault-tolerant design \\
+\textbf{CI/CD \& Testing} & GitHub Actions, automated test suites, deployment pipelines \\
 \end{tabular}
 
-\vspace{-9pt}
-
-% education section
 \section*{Education}
-\textbf{\href{https://www.buas.nl/en/programmes/creative-media-and-game-technologies/programming}{Breda University of Applied Sciences}} -- BSc Creative Media and Game Technologies (cum laude)\hfill 2016 -- 2020
+
+\textbf{\href{https://www.buas.nl/en/programmes/creative-media-and-game-technologies/programming}{Breda University of Applied Sciences}} \\
+BSc Creative Media and Game Technologies (cum laude)\hfill 2016 -- 2020
 
 \end{document}
